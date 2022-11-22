@@ -10,6 +10,7 @@
   <title>@yield('title') &#8212; {{ config('app.name') }}</title>
   @includeIf('partials.favicon')
 
+  @routes
   @vite('resources/js/app.js')
 </head>
 
