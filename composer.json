@@ -10,6 +10,7 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
+        "inertiajs/inertia-laravel": "^0.6.3",
         "laravel/framework": "^9.41",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
@@ -17,6 +18,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "laravel/breeze": "^1.15",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.16.3",
         "mockery/mockery": "^1.4.4",
@@ -50,7 +52,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "php-cs-fixer": [
+        "php-cs-fixer-lint": [
             "php-cs-fixer fix --dry-run --verbose -vv"
         ],
         "php-cs-fixer-fix": [
