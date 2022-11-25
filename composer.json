@@ -60,6 +60,9 @@
         ],
         "phpmd": [
             "phpmd ./app,./config,./tests json phpmd.xml --reportfile .php-md-report.json"
+        ],
+        "php-rector": [
+            "rector process"
         ]
     },
     "extra": {
