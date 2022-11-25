@@ -7,6 +7,12 @@ module.exports = {
   globals: {
     Vue: true,
     _: true,
+    route: true,
+    Ziggy: true,
+    defineProps: "readonly",
+    defineEmits: "readonly",
+    defineExpose: "readonly",
+    withDefaults: "readonly",
   },
   extends: [
     "eslint:recommended",
@@ -24,6 +30,7 @@ module.exports = {
   },
   plugins: ["vue", "prettier"],
   rules: {
+    "comma-dangle": ["error", "always-multiline"],
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     eqeqeq: "error",
     "max-len": [
@@ -34,6 +41,14 @@ module.exports = {
         ignoreUrls: true,
       },
     ],
+  },
+  settings: {
+    "import/resolver": {
+      alias: {
+        map: [["@", "./resources/js"]],
+        extensions: [".js", ".vue"],
+      },
+    },
   },
   overrides: [
     {
