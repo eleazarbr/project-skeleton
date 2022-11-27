@@ -5,3 +5,7 @@ vendor/
 public/
 **/coverage/**
 *.php
+**/dist
+**/components.d.ts
+!/docs/.vitepress
+resources/js/ziggy.js

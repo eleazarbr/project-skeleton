@@ -4,6 +4,12 @@ module.exports = {
     node: true,
     browser: true,
   },
+  extends: [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "prettier",
+  ],
   globals: {
     Vue: true,
     _: true,
@@ -14,12 +20,6 @@ module.exports = {
     defineExpose: "readonly",
     withDefaults: "readonly",
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:vue/recommended",
-    "airbnb-base",
-    "plugin:prettier/recommended",
-  ],
   parserOptions: {
     parser: "@babel/eslint-parser",
     sourceType: "module",
