@@ -30,6 +30,7 @@ module.exports = {
   },
   plugins: ["vue", "prettier"],
   rules: {
+    "vue/require-default-prop": "off",
     "comma-dangle": ["error", "always-multiline"],
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     eqeqeq: "error",
