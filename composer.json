@@ -58,7 +58,7 @@
         "php-cs-fixer-fix": [
             "php-cs-fixer fix --verbose -vv"
         ],
-        "phpmd": [
+        "php-md": [
             "phpmd ./app,./config,./tests json phpmd.xml --reportfile .php-md-report.json"
         ],
         "php-rector": [
