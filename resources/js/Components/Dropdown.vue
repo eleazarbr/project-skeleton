@@ -13,6 +13,8 @@ const props = defineProps({
   },
 });
 
+const open = ref(false);
+
 const closeOnEscape = (e) => {
   if (open.value && e.key === "Escape") {
     open.value = false;
@@ -38,8 +40,6 @@ const alignmentClasses = computed(() => {
   }
   return "origin-top";
 });
-
-const open = ref(false);
 </script>
 
 <template>
@@ -66,10 +66,7 @@ const open = ref(false);
         style="display: none"
         @click="open = false"
       >
-        <div
-          class="rounded-md ring-1 ring-black ring-opacity-5"
-          :class="contentClasses"
-        >
+        <div class="rounded-md ring-1 ring-black ring-opacity-[5]" :class="contentClasses">
           <slot name="content" />
         </div>
       </div>

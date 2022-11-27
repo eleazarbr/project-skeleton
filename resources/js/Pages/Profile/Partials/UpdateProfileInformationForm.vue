@@ -4,7 +4,6 @@ import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
 import { Link, useForm, usePage } from "@inertiajs/inertia-vue3";
-import { ref } from "vue";
 
 const props = defineProps({
   mustVerifyEmail: Boolean,
@@ -24,27 +23,14 @@ const form = useForm({
     <header>
       <h2 class="text-lg font-medium text-gray-900">Profile Information</h2>
 
-      <p class="mt-1 text-sm text-gray-600">
-        Update your account's profile information and email address.
-      </p>
+      <p class="mt-1 text-sm text-gray-600">Update your account's profile information and email address.</p>
     </header>
 
-    <form
-      class="mt-6 space-y-6"
-      @submit.prevent="form.patch(route('profile.update'))"
-    >
+    <form class="mt-6 space-y-6" @submit.prevent="form.patch(route('profile.update'))">
       <div>
         <InputLabel for="name" value="Name" />
 
-        <TextInput
-          id="name"
-          v-model="form.name"
-          type="text"
-          class="mt-1 block w-full"
-          required
-          autofocus
-          autocomplete="name"
-        />
+        <TextInput id="name" v-model="form.name" type="text" class="mt-1 block w-full" required autofocus autocomplete="name" />
 
         <InputError class="mt-2" :message="form.errors.name" />
       </div>
@@ -52,14 +38,7 @@ const form = useForm({
       <div>
         <InputLabel for="email" value="Email" />
 
-        <TextInput
-          id="email"
-          v-model="form.email"
-          type="email"
-          class="mt-1 block w-full"
-          required
-          autocomplete="email"
-        />
+        <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" required autocomplete="email" />
 
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
@@ -77,10 +56,7 @@ const form = useForm({
           </Link>
         </p>
 
-        <div
-          v-show="props.status === 'verification-link-sent'"
-          class="mt-2 text-sm font-medium text-green-600"
-        >
+        <div v-show="props.status === 'verification-link-sent'" class="mt-2 text-sm font-medium text-green-600">
           A new verification link has been sent to your email address.
         </div>
       </div>
@@ -88,14 +64,8 @@ const form = useForm({
       <div class="flex items-center gap-4">
         <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
 
-        <Transition
-          enter-from-class="opacity-0"
-          leave-to-class="opacity-0"
-          class="transition ease-in-out"
-        >
-          <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">
-            Saved.
-          </p>
+        <Transition enter-from-class="opacity-0" leave-to-class="opacity-0" class="transition ease-in-out">
+          <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Saved.</p>
         </Transition>
       </div>
     </form>

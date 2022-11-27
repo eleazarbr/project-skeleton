@@ -33,15 +33,7 @@ const submit = () => {
       <div>
         <InputLabel for="email" value="Email" />
 
-        <TextInput
-          id="email"
-          v-model="form.email"
-          type="email"
-          class="mt-1 block w-full"
-          required
-          autofocus
-          autocomplete="username"
-        />
+        <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" required autofocus autocomplete="username" />
 
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
@@ -49,14 +41,7 @@ const submit = () => {
       <div class="mt-4">
         <InputLabel for="password" value="Password" />
 
-        <TextInput
-          id="password"
-          v-model="form.password"
-          type="password"
-          class="mt-1 block w-full"
-          required
-          autocomplete="new-password"
-        />
+        <TextInput id="password" v-model="form.password" type="password" class="mt-1 block w-full" required autocomplete="new-password" />
 
         <InputError class="mt-2" :message="form.errors.password" />
       </div>
@@ -77,12 +62,7 @@ const submit = () => {
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <PrimaryButton
-          :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
-          Reset Password
-        </PrimaryButton>
+        <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing"> Reset Password </PrimaryButton>
       </div>
     </form>
   </GuestLayout>

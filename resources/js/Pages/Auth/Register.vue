@@ -29,15 +29,7 @@ const submit = () => {
       <div>
         <InputLabel for="name" value="Name" />
 
-        <TextInput
-          id="name"
-          v-model="form.name"
-          type="text"
-          class="mt-1 block w-full"
-          required
-          autofocus
-          autocomplete="name"
-        />
+        <TextInput id="name" v-model="form.name" type="text" class="mt-1 block w-full" required autofocus autocomplete="name" />
 
         <InputError class="mt-2" :message="form.errors.name" />
       </div>
@@ -45,14 +37,7 @@ const submit = () => {
       <div class="mt-4">
         <InputLabel for="email" value="Email" />
 
-        <TextInput
-          id="email"
-          v-model="form.email"
-          type="email"
-          class="mt-1 block w-full"
-          required
-          autocomplete="username"
-        />
+        <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" required autocomplete="username" />
 
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
@@ -60,14 +45,7 @@ const submit = () => {
       <div class="mt-4">
         <InputLabel for="password" value="Password" />
 
-        <TextInput
-          id="password"
-          v-model="form.password"
-          type="password"
-          class="mt-1 block w-full"
-          required
-          autocomplete="new-password"
-        />
+        <TextInput id="password" v-model="form.password" type="password" class="mt-1 block w-full" required autocomplete="new-password" />
 
         <InputError class="mt-2" :message="form.errors.password" />
       </div>
@@ -95,13 +73,7 @@ const submit = () => {
           Already registered?
         </Link>
 
-        <Button
-          class="btn-primary ml-4"
-          :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
-          Register
-        </Button>
+        <Button class="btn-primary ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing"> Register </Button>
       </div>
     </form>
   </GuestLayout>
