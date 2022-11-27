@@ -29,7 +29,7 @@ const submit = () => {
       new one.
     </div>
 
-    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+    <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
       {{ status }}
     </div>
 
@@ -39,9 +39,9 @@ const submit = () => {
 
         <TextInput
           id="email"
+          v-model="form.email"
           type="email"
           class="mt-1 block w-full"
-          v-model="form.email"
           required
           autofocus
           autocomplete="username"
@@ -50,7 +50,7 @@ const submit = () => {
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
 
-      <div class="flex items-center justify-end mt-4">
+      <div class="mt-4 flex items-center justify-end">
         <PrimaryButton
           :class="{ 'opacity-25': form.processing }"
           :disabled="form.processing"

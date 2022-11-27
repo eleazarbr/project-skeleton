@@ -11,7 +11,7 @@ const props = defineProps({
   status: String,
 });
 
-const user = usePage().props.value.auth.user;
+const { user } = usePage().props.value.auth;
 
 const form = useForm({
   name: user.name,
@@ -30,17 +30,17 @@ const form = useForm({
     </header>
 
     <form
-      @submit.prevent="form.patch(route('profile.update'))"
       class="mt-6 space-y-6"
+      @submit.prevent="form.patch(route('profile.update'))"
     >
       <div>
         <InputLabel for="name" value="Name" />
 
         <TextInput
           id="name"
+          v-model="form.name"
           type="text"
           class="mt-1 block w-full"
-          v-model="form.name"
           required
           autofocus
           autocomplete="name"
@@ -54,9 +54,9 @@ const form = useForm({
 
         <TextInput
           id="email"
+          v-model="form.email"
           type="email"
           class="mt-1 block w-full"
-          v-model="form.email"
           required
           autocomplete="email"
         />
@@ -65,13 +65,13 @@ const form = useForm({
       </div>
 
       <div v-if="props.mustVerifyEmail && user.email_verified_at === null">
-        <p class="text-sm mt-2 text-gray-800">
+        <p class="mt-2 text-sm text-gray-800">
           Your email address is unverified.
           <Link
             :href="route('verification.send')"
             method="post"
             as="button"
-            class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             Click here to re-send the verification email.
           </Link>
@@ -79,7 +79,7 @@ const form = useForm({
 
         <div
           v-show="props.status === 'verification-link-sent'"
-          class="mt-2 font-medium text-sm text-green-600"
+          class="mt-2 text-sm font-medium text-green-600"
         >
           A new verification link has been sent to your email address.
         </div>

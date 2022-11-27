@@ -8,6 +8,7 @@ module.exports = {
     "airbnb-base",
     "eslint:recommended",
     "plugin:vue/vue3-recommended",
+    "plugin:tailwindcss/recommended",
     "prettier",
   ],
   globals: {
@@ -28,20 +29,13 @@ module.exports = {
       configFile: "./babel.config.json",
     },
   },
-  plugins: ["vue", "prettier"],
+  plugins: ["vue", "prettier", "tailwindcss"],
   rules: {
     "vue/require-default-prop": "off",
+    "vue/require-prop-types": "off",
     "comma-dangle": ["error", "always-multiline"],
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     eqeqeq: "error",
-    "max-len": [
-      "error",
-      {
-        code: 140,
-        ignoreComments: true,
-        ignoreUrls: true,
-      },
-    ],
   },
   settings: {
     "import/resolver": {

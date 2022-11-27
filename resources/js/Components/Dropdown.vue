@@ -22,20 +22,21 @@ const closeOnEscape = (e) => {
 onMounted(() => document.addEventListener("keydown", closeOnEscape));
 onUnmounted(() => document.removeEventListener("keydown", closeOnEscape));
 
-const widthClass = computed(() => {
-  return {
-    48: "w-48",
-  }[props.width.toString()];
-});
+const widthClass = computed(
+  () =>
+    ({
+      48: "w-48",
+    }[props.width.toString()]),
+);
 
 const alignmentClasses = computed(() => {
   if (props.align === "left") {
     return "origin-top-left left-0";
-  } else if (props.align === "right") {
-    return "origin-top-right right-0";
-  } else {
-    return "origin-top";
   }
+  if (props.align === "right") {
+    return "origin-top-right right-0";
+  }
+  return "origin-top";
 });
 
 const open = ref(false);
