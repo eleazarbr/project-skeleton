@@ -5,14 +5,6 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// use Illuminate\Support\Str;
-// Route::get('/', function () {
-//     $readme = file_get_contents(public_path('README.md'));
-//     $content = Str::markdown($readme);
-
-//     return view('welcome', compact('content'));
-// });
-
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -20,7 +12,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('web.index');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

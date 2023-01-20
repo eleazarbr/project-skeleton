@@ -4,6 +4,7 @@ import InputError from "@/Components/InputError.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
+import Notification from "@/Components/Notification.vue";
 import { Head, useForm } from "@inertiajs/inertia-vue3";
 
 defineProps({
@@ -28,9 +29,7 @@ const submit = () => {
       to choose a new one.
     </div>
 
-    <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
-      {{ status }}
-    </div>
+    <Notification v-if="status" :message="status"></Notification>
 
     <form @submit.prevent="submit">
       <div>
