@@ -8,7 +8,6 @@ module.exports = {
     "airbnb-base",
     "eslint:recommended",
     "plugin:vue/vue3-recommended",
-    "plugin:tailwindcss/recommended",
     "prettier",
   ],
   globals: {
@@ -29,7 +28,7 @@ module.exports = {
       configFile: "./babel.config.json",
     },
   },
-  plugins: ["vue", "prettier", "tailwindcss"],
+  plugins: ["vue", "prettier"],
   rules: {
     "vue/require-default-prop": "off",
     "vue/require-prop-types": "off",
