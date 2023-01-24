@@ -11,28 +11,37 @@ defineProps({
 });
 </script>
 
+<script>
+export default {
+  data() {
+    return {
+      activeTab: 0,
+      multiline: false,
+    };
+  },
+};
+</script>
+
 <template>
   <Head title="Profile" />
 
   <AuthenticatedLayout>
     <template #header>
-      <h2 class="text-xl font-semibold leading-tight text-gray-800">Profile</h2>
+      <h2>Profile</h2>
     </template>
 
-    <div class="py-12">
-      <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
-        <div class="bg-white p-4 shadow sm:rounded-lg sm:p-8">
-          <UpdateProfileInformationForm :must-verify-email="mustVerifyEmail" :status="status" class="max-w-xl" />
-        </div>
+    <o-tabs v-model="activeTab" :multiline="multiline">
+      <o-tab-item :value="0" label="Profile">
+        <UpdateProfileInformationForm :must-verify-email="mustVerifyEmail" :status="status" />
+      </o-tab-item>
 
-        <div class="bg-white p-4 shadow sm:rounded-lg sm:p-8">
-          <UpdatePasswordForm class="max-w-xl" />
-        </div>
+      <o-tab-item :value="1" label="Password">
+        <UpdatePasswordForm />
+      </o-tab-item>
 
-        <div class="bg-white p-4 shadow sm:rounded-lg sm:p-8">
-          <DeleteUserForm class="max-w-xl" />
-        </div>
-      </div>
-    </div>
+      <o-tab-item :value="2" :visible="showBooks" label="Delete">
+        <DeleteUserForm />
+      </o-tab-item>
+    </o-tabs>
   </AuthenticatedLayout>
 </template>

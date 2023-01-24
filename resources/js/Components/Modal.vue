@@ -1,14 +1,10 @@
 <script setup>
-import { computed, onMounted, onUnmounted, watch } from "vue";
+import { onMounted, onUnmounted } from "vue";
 
 const props = defineProps({
   show: {
     type: Boolean,
     default: false,
-  },
-  maxWidth: {
-    type: String,
-    default: "2xl",
   },
   closeable: {
     type: Boolean,
@@ -17,17 +13,6 @@ const props = defineProps({
 });
 
 const emit = defineEmits(["close"]);
-
-watch(
-  () => props.show,
-  () => {
-    if (props.show) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = null;
-    }
-  },
-);
 
 const close = () => {
   if (props.closeable) {
@@ -45,55 +30,26 @@ onMounted(() => document.addEventListener("keydown", closeOnEscape));
 
 onUnmounted(() => {
   document.removeEventListener("keydown", closeOnEscape);
-  document.body.style.overflow = null;
 });
-
-const maxWidthClass = computed(
-  () =>
-    ({
-      sm: "sm:max-w-sm",
-      md: "sm:max-w-md",
-      lg: "sm:max-w-lg",
-      xl: "sm:max-w-xl",
-      "2xl": "sm:max-w-2xl",
-    }[props.maxWidth]),
-);
 </script>
 
 <template>
-  <teleport to="body">
-    <transition leave-active-class="duration-200">
-      <div v-show="show" class="fixed inset-0 z-50 overflow-y-auto px-4 py-6 sm:px-0" scroll-region>
-        <transition
-          enter-active-class="ease-out duration-300"
-          enter-from-class="opacity-0"
-          enter-to-class="opacity-100"
-          leave-active-class="ease-in duration-200"
-          leave-from-class="opacity-100"
-          leave-to-class="opacity-0"
-        >
-          <div v-show="show" class="fixed inset-0 transition-all" @click="close">
-            <div class="absolute inset-0 bg-gray-500 opacity-75" />
-          </div>
-        </transition>
+  <div v-show="show" class="modal" :class="{ 'is-active': show }">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">
+          <slot name="title" />
+        </p>
+        <button class="delete" aria-label="close" @click="close"></button>
+      </header>
 
-        <transition
-          enter-active-class="ease-out duration-300"
-          enter-from-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          enter-to-class="opacity-100 translate-y-0 sm:scale-100"
-          leave-active-class="ease-in duration-200"
-          leave-from-class="opacity-100 translate-y-0 sm:scale-100"
-          leave-to-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-        >
-          <div
-            v-show="show"
-            class="mb-6 overflow-hidden rounded-lg bg-white shadow-xl transition-all sm:mx-auto sm:w-full"
-            :class="maxWidthClass"
-          >
-            <slot v-if="show" />
-          </div>
-        </transition>
-      </div>
-    </transition>
-  </teleport>
+      <section class="modal-card-body">
+        <slot name="body" />
+      </section>
+      <footer class="modal-card-foot">
+        <slot name="footer" />
+      </footer>
+    </div>
+  </div>
 </template>

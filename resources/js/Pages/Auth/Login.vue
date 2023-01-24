@@ -43,7 +43,7 @@ const submit = () => {
 
           <div class="field">
             <InputLabel for="password" value="Password" />
-            <TextInput id="password" v-model="form.password" :errors="form.errors.email" type="password" autocomplete="current-password" />
+            <TextInput id="password" v-model="form.password" :errors="form.errors.password" type="password" autocomplete="current-password" />
             <InputError class="mt-2" :message="form.errors.password" />
           </div>
 
@@ -55,8 +55,8 @@ const submit = () => {
           </div>
 
           <div class="buttons is-right mt-4">
-            <Link v-if="canResetPassword" :href="route('password.request')" class="button is-text"> Forgot your password? </Link>
-            <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing"> Log in </PrimaryButton>
+            <Link v-if="canResetPassword" :href="route('password.request')" class="button is-ghost"> Forgot your password? </Link>
+            <PrimaryButton :disabled="form.processing"> Log in </PrimaryButton>
           </div>
         </form>
       </div>

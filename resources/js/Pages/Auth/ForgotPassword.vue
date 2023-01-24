@@ -24,25 +24,27 @@ const submit = () => {
   <GuestLayout>
     <Head title="Forgot Password" />
 
-    <div class="mb-4 text-sm text-gray-600">
-      Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you
-      to choose a new one.
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <div class="mb-4">
+          Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow
+          you to choose a new one.
+        </div>
+
+        <Notification v-if="status" class="is-success" :message="status"></Notification>
+
+        <form @submit.prevent="submit">
+          <div class="field">
+            <InputLabel for="email" value="Email" />
+            <TextInput id="email" v-model="form.email" type="email" autofocus autocomplete="username" />
+            <InputError :message="form.errors.email" />
+          </div>
+
+          <div class="mt-4 buttons is-right">
+            <PrimaryButton :disabled="form.processing"> Email Password Reset Link </PrimaryButton>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <Notification v-if="status" :message="status"></Notification>
-
-    <form @submit.prevent="submit">
-      <div>
-        <InputLabel for="email" value="Email" />
-
-        <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" required autofocus autocomplete="username" />
-
-        <InputError class="mt-2" :message="form.errors.email" />
-      </div>
-
-      <div class="mt-4 flex items-center justify-end">
-        <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing"> Email Password Reset Link </PrimaryButton>
-      </div>
-    </form>
   </GuestLayout>
 </template>
