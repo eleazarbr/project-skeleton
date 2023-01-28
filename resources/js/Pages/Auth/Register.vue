@@ -30,24 +30,19 @@ const submit = () => {
         <form @submit.prevent="submit">
           <div class="field">
             <InputLabel for="name" value="Name" />
-            <TextInput id="name" v-model="form.name" type="text" autofocus autocomplete="name" />
+            <TextInput id="name" v-model="form.name" :errors="form.errors.name" type="text" autofocus autocomplete="name" />
             <InputError :message="form.errors.name" />
           </div>
 
           <div class="field">
             <InputLabel for="email" value="Email" />
-            <TextInput id="email" v-model="form.email" type="email" autocomplete="username" />
+            <TextInput id="email" v-model="form.email" :errors="form.errors.email" type="email" autocomplete="username" />
             <InputError :message="form.errors.email" />
           </div>
 
           <div class="field">
             <InputLabel for="password" value="Password" />
-            <TextInput
-              id="password"
-              v-model="form.password"
-              type="password"
-              autocomplete="new-password"
-            />
+            <TextInput id="password" v-model="form.password" type="password" autocomplete="new-password" :errors="form.errors.password" />
             <InputError :message="form.errors.password" />
           </div>
 
@@ -58,17 +53,13 @@ const submit = () => {
               v-model="form.password_confirmation"
               type="password"
               autocomplete="new-password"
+              :errors="form.errors.password_confirmation"
             />
             <InputError :message="form.errors.password_confirmation" />
           </div>
 
           <div class="buttons is-right">
-            <Link
-              :href="route('login')"
-              class="button is-ghost"
-            >
-              Already registered?
-            </Link>
+            <Link :href="route('login')" class="button is-ghost"> Already registered? </Link>
 
             <Button class="button is-primary" :disabled="form.processing"> Register </Button>
           </div>

@@ -36,7 +36,7 @@ const submit = () => {
         <form @submit.prevent="submit">
           <div class="field">
             <InputLabel for="email" value="Email" />
-            <TextInput id="email" v-model="form.email" type="email" autofocus autocomplete="username" />
+            <TextInput id="email" v-model="form.email" type="email" autofocus autocomplete="username" :errors="form.errors.email" />
             <InputError :message="form.errors.email" />
           </div>
 
