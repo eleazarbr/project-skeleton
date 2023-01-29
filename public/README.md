@@ -145,7 +145,7 @@ Later we'll use Laravel Pint :)
 
 - [x] Optionally use Bulma CSS.
 - [ ] Use Laravel Pint instead of PHP CS Fixer.
-- [ ] Use Doker / Laravel Sail.
+- [ ] Use Docker / Laravel Sail.
 
 See the [open issues][18] for a full list of proposed features (and known issues).
 
