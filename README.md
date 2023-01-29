@@ -70,7 +70,7 @@ Repository template with basic tools for my projects.
 * [![Laravel][image-13]][13]
 * [![Vue][image-10]][10]
 * [![Vite][image-11]][11]
-<!-- * [![Bulma][image-9]][9] -->
+* [![Bulma][image-9]][9]
 * [![Tailwind CSS][image-14]][14]
 * [![Inertia][image-12]][12]
 * [![Oruga][image-8]][8]
@@ -143,9 +143,9 @@ Later we'll use Laravel Pint :)
 <!-- ROADMAP -->
 ## Roadmap
 
+- [x] Optionally use Bulma CSS.
 - [ ] Use Laravel Pint instead of PHP CS Fixer.
-- [ ] Optionally use Bulma CSS.
-- [ ] Use Doker / Laravel Sail.
+- [ ] Use Docker / Laravel Sail.
 
 See the [open issues][18] for a full list of proposed features (and known issues).
 
