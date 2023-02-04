@@ -138,6 +138,11 @@ Later we'll use Laravel Pint :)
 - Run `npm run format` to format your JavaScript code using Prettier.
 - Run `php artisan test` to test the entire suite.
 
+**Browser Testing**:
+
+- Install Laravel Dusk: `php artisan dusk:install`.
+- Run your tests: `php artisan dusk`.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
