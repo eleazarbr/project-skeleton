@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-// Fonts.
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
-
 // Set brand colors.
 $turquoise: hsl(190, 100%, 41%);
 $red: hsl(348, 86%, 61%);
@@ -13,6 +10,7 @@ $yellow: hsl(44, 100%, 77%);
 
 // Update Bulma's global variables.
 $family-sans-serif: "Nunito", sans-serif;
+$family-code: "IBM Plex Mono", monospace;
 $primary: $turquoise;
 $danger: $red;
 $link: $blue;

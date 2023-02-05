@@ -119,8 +119,9 @@ npm run dev
 Set up your .env file, basic changes like:
 
 - App name & URL.
-- Database connection.
+- Database connection and migrate: `php artisan migrate`.
 - Mail settings (e.g. Mailtrap).
+- Running: `php artisan storage:link`.
 
 Now you will be able to access from the browser.
 
