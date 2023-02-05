@@ -94,6 +94,7 @@ Later, we'll have the option to use Docker or Laravel Sail. For now, we have to 
   - [PHPMD - PHP Mess Detector](https://phpmd.org/) (global install optional)
 - [Node 16.18](https://nodejs.org/en/)
 - [NPM 8.19](https://www.npmjs.com/)
+- The current setup uses SSL, keep this in mind in case you get some errors regarding Websockets in console.
 
 ### Installation
 
