@@ -9,7 +9,7 @@ export default defineConfig({
     laravel({
       input: ["resources/js/app.js"],
       refresh: true,
-      // valetTls: 'my-app.test'
+      // valetTls: "my-app.test"
     }),
     vue({
       template: {
@@ -20,4 +20,10 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    hmr: {
+      host: "localhost",
+      protocol: "ws",
+    },
+  },
 });

@@ -14,7 +14,7 @@ defineProps({
 <template>
   <Head title="Welcome" />
 
-  <div class="hero is-link is-fullheight">
+  <div class="hero is-primary is-fullheight">
     <div class="hero-head">
       <nav class="navbar">
         <div class="container">

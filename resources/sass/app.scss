@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+// Fonts.
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&display=swap");
+
+// Set brand colors.
+$orange: hsla(14, 73%, 62%, 1);
+$red: hsla(0, 100%, 38%, 1);
+$blue: hsl(229, 53%, 53%);
+$cyan: hsl(207, 61%, 53%);
+$green: hsla(153, 64%, 37%, 1);
+$yellow: hsl(44, 100%, 77%);
+
+// Update Bulma's global variables.
+$family-sans-serif: "Merriweather Sans", sans-serif;
+$primary: $orange;
+$danger: $red;
+$link: $blue;
+$info: $cyan;
+$success: $green;
+$warning: $yellow;
+
+@import "bulma/bulma.sass";
