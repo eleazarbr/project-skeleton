@@ -10,11 +10,8 @@ Route::get('/', function () {
     $readme = file_get_contents(public_path('README.md'));
 
     return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-        'appName' => config('app.name'),
         'content' => Str::markdown($readme),
     ]);
 })->name('web.index');
