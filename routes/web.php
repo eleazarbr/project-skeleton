@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
+
+Route::get('locale/{locale}', [LocaleController::class, 'update'])->name('locale.update');
 
 Route::get('/', function () {
     $readme = file_get_contents(public_path('README.md'));

@@ -3,23 +3,26 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title inertia>{{ config('app.name') }}</title>
 
-  <title>@yield('title') &#8212; {{ config('app.name') }}</title>
   @includeIf('partials.favicon')
 
+  <!-- Fonts -->
+  @googlefonts('default')
+  @googlefonts('code')
+
+  <!-- Scripts -->
   @routes
-  @vite('resources/js/app.js')
+  @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
+  @inertiaHead
 </head>
 
 <body>
   <main>
-    @yield('content')
+    @inertia
   </main>
-
-  @stack('scripts')
 </body>
 
 </html>

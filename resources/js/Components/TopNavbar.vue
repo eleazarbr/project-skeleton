@@ -3,6 +3,7 @@ import { Link } from "@inertiajs/inertia-vue3";
 import { ref } from "vue";
 import NavbarDropdown from "@/Components/NavbarDropdown.vue";
 import NavbarLink from "@/Components/NavbarLink.vue";
+import LocaleDropdown from "@/Components/LocaleDropdown.vue";
 
 const logoUrl = "";
 const showAppName = true;
@@ -31,6 +32,7 @@ function toggleMenu() {
       </div>
       <div id="navbar" class="navbar-menu" :class="{ 'is-active': isActive }">
         <div class="navbar-start">
+          <LocaleDropdown />
           <template v-if="$page.props.auth.user">
             <NavbarLink :href="route('dashboard')" :active="route().current('dashboard')"> Dashboard </NavbarLink>
           </template>
@@ -40,8 +42,12 @@ function toggleMenu() {
             <NavbarDropdown />
           </template>
           <template v-else>
-            <NavbarLink :href="route('login')" :active="route().current('login')"> Log In </NavbarLink>
-            <NavbarLink :href="route('register')" :active="route().current('register')"> Register </NavbarLink>
+            <NavbarLink :href="route('login')" :active="route().current('login')">
+              {{ $t("copy.navbar.login") }}
+            </NavbarLink>
+            <NavbarLink :href="route('register')" :active="route().current('register')">
+              {{ $t("copy.navbar.register") }}
+            </NavbarLink>
           </template>
         </div>
       </div>
