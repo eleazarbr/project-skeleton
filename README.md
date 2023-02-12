@@ -128,7 +128,7 @@ Now you will be able to access from the browser.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This project uses Laravel and Vue in their latest versions.
+This project uses Laravel and Vue in their LTS versions.
 
 Additionally, code fixers and linters were added to maintain a standard in the code base.
 
@@ -150,9 +150,10 @@ Later we'll use Laravel Pint :)
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Optionally use Bulma CSS.
+- [x] Added Bulma CSS.
+- [x] Added i18n.
 - [ ] Use Laravel Pint instead of PHP CS Fixer.
-- [ ] Use Docker / Laravel Sail.
+- [ ] Add Docker / Laravel Sail support.
 
 See the [open issues][18] for a full list of proposed features (and known issues).
 
