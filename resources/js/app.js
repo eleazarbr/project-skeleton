@@ -5,11 +5,16 @@ import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
 import { InertiaProgress } from "@inertiajs/progress";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
+import { i18nVue } from "laravel-vue-i18n";
+// Oruga.
 import Oruga from "@oruga-ui/oruga-next";
 import "@oruga-ui/oruga-next/dist/oruga.css";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { i18nVue } from "laravel-vue-i18n";
+
+// Ziggy.
 import { ZiggyVue } from "../../vendor/tightenco/ziggy/dist/vue.m";
+
+// Icons.
+import "@mdi/font/css/materialdesignicons.min.css";
 
 const appName = window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
 
