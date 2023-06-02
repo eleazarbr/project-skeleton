@@ -16,7 +16,7 @@
   </a>
   <h3 align="center">Project Skeleton</h3>
   <p align="center">
-    Basic template for my projects.
+    A foundational template for all my projects.
     <!-- <br /> -->
     <!-- <a href="https://github.com/eleazarbr/project-skeleton"><strong>Explore the docs »</strong></a> -->
     <br />
@@ -61,7 +61,7 @@
 
 [![Project Skeleton Screen Shot][image-7]][7]
 
-Repository template with basic tools for my projects.
+This repository provides a pre-configured template equipped with basic tools for kick-starting any project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,11 +80,11 @@ Repository template with basic tools for my projects.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these steps:
+Follow these steps to get a local copy up and running:
 
 ### Prerequisites
 
-Later, we'll have the option to use Docker or Laravel Sail. For now, we have to install a web server like [NGINX](https://www.nginx.com/) and the next tools:
+In the future, options for Docker or Laravel Sail will be available. Currently, installation requires a web server like [NGINX](https://www.nginx.com/) and the following tools:
 
 - [PHP ^8.1](https://www.php.net/)
   - [Laravel Required PHP Extensions](https://laravel.com/docs/7.x#server-requirements)
@@ -94,11 +94,11 @@ Later, we'll have the option to use Docker or Laravel Sail. For now, we have to 
   - [PHPMD - PHP Mess Detector](https://phpmd.org/) (global install optional)
 - [Node 16.18](https://nodejs.org/en/)
 - [NPM 8.19](https://www.npmjs.com/)
-- The current setup uses SSL, keep this in mind in case you get some errors regarding Websockets in console.
+- An SSL setup (needed for Websockets).
 
 ### Installation
 
-Create a new project by running the following command:
+To create a new project, execute:
 
 ```bash
 composer create-project eleazarbr/project-skeleton name
@@ -116,56 +116,52 @@ Compile assets:
 npm run dev
 ```
 
-Set up your .env file, basic changes like:
+Next, set up your .env file. Basic configurations include:
 
 - App name & URL.
-- Database connection and migrate: `php artisan migrate`.
-- Mail settings (e.g. Mailtrap).
-- Running: `php artisan storage:link`.
+- Database connection and migration: `php artisan migrate`.
+- Mail settings (example: Mailtrap).
+- Execute: `php artisan storage:link`.
 
-Now you will be able to access from the browser.
+Now, you should be able to access the project from your browser.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This project uses Laravel and Vue in their LTS versions.
+The project incorporates LTS versions of Laravel and Vue. Additionally, code fixers and linters are included to ensure coding standards are maintained. Here's a quick rundown:
 
-Additionally, code fixers and linters were added to maintain a standard in the code base.
-
-- Run `composer rector` to apply rules from the `rector.php` file
-- Run `composer php-cs-fixer-fix` to fix the PHP code.
-Later we'll use Laravel Pint :)
-- Optionally, run `composer php-md` for mess detector.
-- Run `npm run lint-fix` to fix the JavaScript code.
-- Run `npm run format` to format your JavaScript code using Prettier.
-- Run `php artisan test` to test the entire suite.
+- Apply rules from the rector.php file: `composer rector`
+- Fix the PHP code: `composer php-cs-fixer-fix`. (Laravel Pint will be used in the future)
+- Run mess detector (optional): `composer php-md`
+- Fix JavaScript code: `npm run lint-fix`
+- Format JavaScript code with Prettier: `npm run format`
+- Test the entire suite: `php artisan test`
 
 **Browser Testing**:
 
 - Install Laravel Dusk: `php artisan dusk:install`.
-- Run your tests: `php artisan dusk`.
+- Run tests: `php artisan dusk`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Added Bulma CSS.
-- [x] Added i18n.
-- [ ] Use Laravel Pint instead of PHP CS Fixer.
+- [x] Implement Bulma CSS
+- [x] Add i18n.
+- [ ] Replace PHP CS Fixer with Laravel Pint
 - [ ] Add Docker / Laravel Sail support.
 
-See the [open issues][18] for a full list of proposed features (and known issues).
+For a complete list of proposed features and known issues, visit the [open issues][18].
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Your contributions help make the open-source community a space for learning, inspiration, and creativity. Any contributions are greatly appreciated.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+If you have suggestions for improvements, please fork the repo and create a pull request or open an issue tagged as "enhancement". Don't forget to star the project!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/amazing-feature`)
@@ -178,7 +174,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+This project is distributed under the MIT License. For more information, please refer to the LICENSE.txt file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -198,7 +194,7 @@ Project Link: [https://github.com/eleazarbr/project-skeleton][20]
 [2]:	https://github.com/eleazarbr/project-skeleton/network/members
 [3]:	https://github.com/eleazarbr/project-skeleton/stargazers
 [4]:	https://github.com/eleazarbr/project-skeleton/issues
-[5]:	https://github.com/eleazarbr/project-skeleton/blob/master/LICENSE.txt
+[5]:	https://github.com/eleazarbr/project-skeleton/blob/master/LICENSE
 [6]:	https://linkedin.com/in/eresendez
 [7]:	https://example.com
 [8]:	https://oruga.io/
