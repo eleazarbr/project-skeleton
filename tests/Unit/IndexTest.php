@@ -8,7 +8,7 @@ class IndexTest extends TestCase
 {
     public function testRenderIndexPage()
     {
-        $response = $this->get(route('web.index'));
-        $response->assertOk();
+        $testResponse = $this->get(route('web.index'));
+        $testResponse->assertOk();
     }
 }

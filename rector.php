@@ -27,13 +27,14 @@ return static function (RectorConfig $rectorConfig): void {
     ]);
 
     $rectorConfig->skip([
+        Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector::class,
         Rector\CodingStyle\Rector\Switch_\BinarySwitchToIfElseRector::class,
         Rector\CodingStyle\Rector\PostInc\PostIncDecToPreIncDecRector::class,
         Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector::class,
         Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector::class,
-        Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector::class,
-        Rector\Php81\Rector\ClassConst\FinalizePublicClassConstantRector::class,
-        Rector\Php80\Rector\Class_\ClassPropertyAssignToConstructorPromotionRector::class,
         Rector\CodingStyle\Rector\ClassMethod\UnSpreadOperatorRector::class,
+        Rector\CodingStyle\Rector\Closure\StaticClosureRector::class,
+        Rector\Php80\Rector\Class_\ClassPropertyAssignToConstructorPromotionRector::class,
+        Rector\Php81\Rector\ClassConst\FinalizePublicClassConstantRector::class,
     ]);
 };
