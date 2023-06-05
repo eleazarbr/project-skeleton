@@ -55,17 +55,20 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "php-cs-fixer-lint": [
-            "php-cs-fixer fix --dry-run --verbose -vv"
+        "php-cs-fixer-dry": [
+            "php-cs-fixer fix --dry-run --stop-on-violation"
         ],
-        "php-cs-fixer-fix": [
+        "php-cs-fixer": [
             "php-cs-fixer fix --verbose -vv"
         ],
         "php-md": [
-            "phpmd ./app,./config,./tests json phpmd.xml --reportfile .php-md-report.json"
+            "phpmd ./app,./config,./tests json phpmd.xml --reportfile .php-md-report.json || exit 1"
         ],
-        "php-rector": [
-            "rector process"
+        "rector-dry": [
+            "rector process --dry-run --config=rector.php"
+        ],
+        "rector": [
+            "rector process --config=rector.php"
         ]
     },
     "extra": {

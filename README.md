@@ -131,7 +131,7 @@ Now, you should be able to access the project from your browser.
 The project incorporates LTS versions of Laravel and Vue. Additionally, code fixers and linters are included to ensure coding standards are maintained. Here's a quick rundown:
 
 - Apply rules from the rector.php file: `composer rector`
-- Fix the PHP code: `composer php-cs-fixer-fix`. (Laravel Pint will be used in the future)
+- Fix the PHP code: `composer php-cs-fixer`. (Laravel Pint will be used in the future)
 - Run mess detector (optional): `composer php-md`
 - Fix JavaScript code: `npm run lint-fix`
 - Format JavaScript code with Prettier: `npm run format`
