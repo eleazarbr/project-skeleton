@@ -1,0 +1,7 @@
+#!/bin/sh
+OUTPUT=$(composer php-cs-fixer-dry)
+if [ $? -ne 0 ]; then
+    echo "Failed PHP code fix:"
+    echo $OUTPUT
+    exit 1
+fi
