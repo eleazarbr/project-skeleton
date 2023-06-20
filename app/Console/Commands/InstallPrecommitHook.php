@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use RuntimeException;
 use Symfony\Component\Process\Process;
 
 class InstallPrecommitHook extends Command
@@ -18,7 +19,7 @@ class InstallPrecommitHook extends Command
         $process->run();
 
         if (!$process->isSuccessful()) {
-            throw new \RuntimeException($process->getErrorOutput());
+            throw new RuntimeException($process->getErrorOutput());
         }
 
         $this->info('pre-commit hook installed successfully.');
