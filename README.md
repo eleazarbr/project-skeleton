@@ -86,7 +86,7 @@ Follow these steps to get a local copy up and running:
 
 In the future, options for Docker or Laravel Sail will be available. Currently, installation requires a web server like [NGINX](https://www.nginx.com/) and the following tools:
 
-- [PHP ^8.1](https://www.php.net/)
+- [PHP ^8.2](https://www.php.net/)
   - [Laravel Required PHP Extensions](https://laravel.com/docs/7.x#server-requirements)
 - [Composer](https://getcomposer.org/)
   - [Rector](https://getrector.org/) (global install optional)
